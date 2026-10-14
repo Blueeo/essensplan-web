@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Essensplan</title>
+    <meta name="theme-color" content="#2F4B3C">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Essensplan">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="icon" type="image/png" href="icons/icon-192.png">
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+    <link type="text/css" rel="stylesheet" href="styles.css">
+</head>
+<body style="text-align: center; align-content: center">
+    <svg id="spinner" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 50 50" role="presentation">
+        <circle cx="25" cy="25" r="20" stroke="#ccc" stroke-width="4" fill="none"/>
+        <circle cx="25" cy="25" r="20" stroke="#2F4B3C" stroke-width="4" fill="none" stroke-linecap="round"
+                stroke-dasharray="90 125">
+            <animateTransform attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="1s"
+                              repeatCount="indefinite"/>
+        </circle>
+    </svg>
+    <!-- Reihenfolge wichtig: erst SQLite (sql.js), dann Speicher-Helfer, dann die App -->
+    <script src="sql-wasm.js"></script>
+    <script src="persist.js"></script>
+    <script type="application/javascript" src="webApp.js"></script>
+</body>
+</html>
